@@ -1,0 +1,255 @@
+$bg-color: #E4E4E4;
+$primary-color: rgb(241, 90, 36);
+$text-color: rgb(37, 37, 37);
+$hover-color: rgb(250, 120, 73);
+$title-font: normal 46px 'Roboto Slab', serif;
+$subtitle-font: normal 24px 'Roboto', sans-serif;
+$text-font: normal 16px 'Roboto', sans-serif;
+
+@mixin formulario {
+    background: none;
+    width: 90%;
+    height: 90%;
+}
+
+@mixin textarea {
+    width: 100%;
+    padding: 5px;
+    border: none;
+    outline: none;
+    background: none;
+    color: $text-color;
+    border-bottom: 1px solid $primary-color;
+}
+
+@mixin  boton-enviar {
+    background: $primary-color;
+    color: white;
+    border: 0;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 20px;
+}
+
+@mixin boton-reservar {
+    background: $primary-color;
+    color: white;
+    border: 0;
+    text-transform: uppercase;
+    padding: 10px;
+    margin-top: 50px;    
+}
+
+@mixin shadow {
+    box-shadow: 3px 5px 15px rgba(0,0,0,0.48)
+}
+
+body {
+    background-color: $bg-color;
+    font-family: 'Roboto', sans-serif;
+}
+
+ h1 {
+     font: $title-font;
+     color: $primary-color;
+ }
+
+ h2 {
+     font: $subtitle-font;
+     color: $primary-color;
+ }
+
+ p {
+     font: $text-font;
+     color: $text-color;
+ }
+
+
+
+
+  /* BARRA DE NAVEGACIÓN */
+
+
+  #barra {
+    z-index: 1;
+     top: 0px; right: 0px; left: 0px; 
+     text-align: justify; 
+     position: absolute;}
+
+  #barra a {color: white; text-transform: uppercase; text-decoration: none;}
+  #barra a:hover {color: $primary-color;}
+  
+
+
+  /* HOME */
+
+  #home{
+  overflow: hidden; 
+  border: none;
+  padding: 0px;
+  max-width: 100%;
+  box-align: center; 
+}
+
+
+
+/* MENU */
+
+#menu h1 {
+  margin-top: 8%;
+  margin-left: 10%;
+}
+
+.platos {
+  width: 90%;
+  margin: auto;
+  list-style: none;
+  padding: 20px;
+  box-sizing: border-box;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.platos li {
+    @include shadow;
+    margin: 10px;
+    margin-top: 50px;
+}
+
+.platos img {
+    width: 300px;
+}
+
+.foto {
+  width: 350px;
+  height: 250px;
+  overflow: hidden;
+}
+
+.foto img {
+  width: 400px;
+  height: 300px;
+  transition: 1s;
+}
+
+.foto img:hover {
+  transform: scale(1.5)
+}
+
+.nombre {
+  text-align: center;
+  padding-top: 10px;
+  
+}
+
+.descripcion{
+  text-align: center;
+  margin: auto;
+  padding-bottom: 10px;
+  width: 300px;
+}
+
+/* NOSOTROS */
+
+#nosotros .container {
+  margin-top: 8%;
+  margin-bottom: 5%;
+  padding: 20px;
+}
+
+#nosotros h1 {
+  margin-bottom: 9%;
+}
+
+/* RESERVAS */
+
+
+#reserva img {
+  width: 100%;
+  margin-top: 3%;
+}
+
+.formularioreserva {
+  @include formulario;
+  margin-top: 3%;
+  margin-right: 5%;
+  margin-left: 5%;
+  margin-bottom: 2%;
+  
+}
+
+.formularioreserva form label {
+  display: block;
+}
+
+.formularioreserva form button,
+.formularioreserva form input,
+.formularioreserva form textarea {
+    @include textarea;
+}
+
+.formularioreserva form button {
+  @include boton-reservar;
+}
+
+.formularioreserva form button:hover {
+  background-color: $hover-color;
+}
+
+
+
+/* CONTACTO */
+
+
+#escribinos {
+  margin-top: 10%;
+
+  align-content: center;
+}
+
+#escribinos h1 {
+  text-align: left;
+  margin-bottom: 5%;
+}
+
+#escribinos p {
+  text-align: left;
+  width: 85%;
+  margin-bottom: 10%;
+}
+
+  .formulariocontacto  {
+    @include formulario;
+    @include shadow;
+    padding: 30px;
+    margin-bottom: 10%;
+    }
+
+  .formulariocontacto form label {
+    display: block;
+  }
+
+  .formulariocontacto form button,
+  .formulariocontacto form input,
+  .formulariocontacto form textarea {
+    @include textarea;
+  }
+
+  .formulariocontacto form button {
+    @include boton-enviar;
+  }
+
+  .formulariocontacto form button:hover {
+    background-color: $hover-color;
+  }
+
+
+/* FOOTER */
+
+#footer p {
+  color: $bg-color;
+}
+
+.blackiconcolor {color: $bg-color;} 
